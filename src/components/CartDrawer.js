@@ -13,12 +13,19 @@ const CartDrawer = ({ isOpen, onClose }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  // suppression de sending
+  const [sending, setSending] = useState(false);
   const paypalRef = useRef(null);
 
+  // Appliquer les promotions
   const promoCart = cart.map(item => applyPromotion(item, promotions));
 
-  const subtotal = promoCart.reduce((acc, item) => acc + (item.promotionPrice || item.price) * (item.quantity || 1), 0);
+  console.log("Cart:", cart);
+  console.log("PromoCart:", promoCart);
+
+  const subtotal = promoCart.reduce(
+    (acc, item) => acc + (item.promotionPrice || item.price) * (item.quantity || 1),
+    0
+  );
   const tps = subtotal * 0.05;
   const tvq = subtotal * 0.09975;
   const total = subtotal + tps + tvq;
@@ -44,26 +51,27 @@ const CartDrawer = ({ isOpen, onClose }) => {
     })),
   };
 
-  const handlePaymentSuccess = async () => {
-    try {
-      // suppression de setSending(true)
-      await addDoc(collection(db, "orders"), orderData);
-      alert("Commande payée et enregistrée ! Un courriel vous sera envoyé.");
-      clearCart();
-      setName("");
-      setEmail("");
-      setPhone("");
-      onClose();
-    } catch (error) {
-      console.error("Erreur lors de l'enregistrement de la commande", error);
-      alert("Une erreur est survenue. Veuillez réessayer plus tard.");
-    } finally {
-      // suppression de setSending(false)
-    }
-  };
-
   useEffect(() => {
     if (!isOpen) return;
+
+    // Fonction déplacée ici
+    const handlePaymentSuccess = async () => {
+      try {
+        setSending(true);
+        await addDoc(collection(db, "orders"), orderData);
+        alert("Commande payée et enregistrée ! Un courriel vous sera envoyé.");
+        clearCart();
+        setName("");
+        setEmail("");
+        setPhone("");
+        onClose();
+      } catch (error) {
+        console.error("Erreur lors de l'enregistrement de la commande", error);
+        alert("Une erreur est survenue. Veuillez réessayer plus tard.");
+      } finally {
+        setSending(false);
+      }
+    };
 
     if (isFormValid && window.paypal && paypalRef.current) {
       paypalRef.current.innerHTML = "";
@@ -91,7 +99,7 @@ const CartDrawer = ({ isOpen, onClose }) => {
         },
       }).render(paypalRef.current);
     }
-  }, [isOpen, isFormValid, total, handlePaymentSuccess]); // Ajout de handlePaymentSuccess ici
+  }, [isOpen, isFormValid, total, orderData, clearCart, onClose]);
 
   return (
     <div className={`cart-drawer ${isOpen ? "open" : ""}`}>
