@@ -183,3 +183,23 @@ h2 {
     margin-top: 1.5rem;
   }
 }
+
+.promo-price {
+  color: #d32f2f; /* rouge vif */
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: #888;
+  font-size: 0.95em;
+  margin-left: 0.5rem;
+}
+
+.error {
+  color: #cc3333;
+  font-size: 0.85rem;
+  margin-top: 0.2rem;
+  margin-bottom: 0.5rem;
+}
