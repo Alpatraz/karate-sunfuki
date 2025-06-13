@@ -1,0 +1,243 @@
+/* Base générale */
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #ffffff;
+  margin: 0;
+  padding: 0;
+  color: #1a1a1a;
+}
+
+.app {
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* En-tête */
+.header {
+  background-color: #cc3333;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.logo {
+  height: 100px;
+  max-width: 100%;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+}
+
+.lang-btn {
+  background-color: #ffffff;
+  color: #cc3333;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+/* Panier en haut à droite */
+.cart-floating-btn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  background-color: #cc3333;
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.cart-floating-btn:hover {
+  transform: scale(1.05);
+}
+
+.cart-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: #ffffff;
+  color: #cc3333;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 0.2rem 0.5rem;
+  border-radius: 999px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Titre principal */
+.main h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin: 2rem 0 1rem 0;
+  text-transform: uppercase;
+}
+
+/* Filtres */
+.filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 2rem auto;
+  padding-top: 1rem;
+}
+
+.filters select,
+.filters input[type="checkbox"] {
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+/* Grille de produits */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+}
+
+/* Carte produit */
+.card {
+  position: relative;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 1rem;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.02);
+  cursor: pointer;
+}
+
+.card img {
+  max-width: 120px;
+  max-height: 120px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.card h2 {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+.card .price {
+  color: #cc3333;
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.card .sizes {
+  color: #333;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.card select,
+.card input[type="text"] {
+  width: 90%;
+  padding: 0.4rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.card button {
+  background-color: #cc3333;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Badge discret en haut à gauche */
+.badge-top-left {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  padding: 0.3rem 0.5rem;
+  font-size: 0.7rem;
+  font-weight: bold;
+  border-radius: 999px;
+  color: white;
+  z-index: 10;
+}
+
+/* Couleurs des badges */
+.badge-white {
+  background-color: #e0e0e0;
+  color: #333;
+  border: 1px solid #ccc;
+}
+
+.badge-yellow {
+  background-color: #ffd700;
+}
+
+.badge-orange {
+  background-color: #ffa500;
+}
+
+.badge-purple {
+  background-color: #a064c4;
+}
+
+.badge-green {
+  background-color: #4caf50;
+}
+
+.badge-blue {
+  background-color: #2196f3;
+}
+
+.badge-brown {
+  background-color: #8b4513;
+}
+
+.badge-black {
+  background-color: #000;
+}
+
+/* Élégance supplémentaire */
+.elegant-card {
+  transition: box-shadow 0.2s;
+}
+
+.elegant-card:hover {
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+} 
+
+.promo-price {
+  color: #d32f2f;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: #888;
+  font-size: 0.9em;
+  margin-left: 0.5rem;
+}

@@ -1,0 +1,111 @@
+.admin-promotions-container {
+    padding: 2rem;
+    max-width: 1100px;
+    margin: auto;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .admin-promotions-container .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  
+  .admin-promotions-container .header h2 {
+    font-size: 1.8rem;
+    color: #333;
+  }
+  
+  .admin-promotions-container .header button {
+    background: #1a237e;
+    color: #fff;
+    padding: 0.5rem 1.2rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.2s;
+  }
+  
+  .admin-promotions-container .header button:hover {
+    background: #3949ab;
+  }
+  
+  .promo-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  
+  .promo-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s;
+  }
+  
+  .promo-card:hover {
+    transform: translateY(-2px);
+  }
+  
+  .promo-card h4 {
+    margin: 0 0 0.3rem 0;
+    font-size: 1.2rem;
+    color: #222;
+  }
+  
+  .promo-card p {
+    margin: 0.25rem 0;
+    font-size: 0.9rem;
+    color: #555;
+  }
+  
+  .promo-card .actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+  
+  .promo-card .actions button {
+    border: none;
+    padding: 0.4rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    cursor: pointer;
+  }
+  
+  .promo-card .actions button:hover {
+    opacity: 0.85;
+  }
+  
+  .promo-card.active {
+    border-left: 5px solid #43a047;
+  }
+  
+  .promo-card.upcoming {
+    border-left: 5px solid #fbc02d;
+  }
+  
+  .promo-card.expired {
+    border-left: 5px solid #e53935;
+  }
+  
+  .promo-card .actions button:nth-child(1) {
+    background: #1976d2;
+    color: white;
+  }
+  
+  .promo-card .actions button:nth-child(2) {
+    background: #43a047;
+    color: white;
+  }
+  
+  .promo-card .actions button:nth-child(3) {
+    background: #e53935;
+    color: white;
+  }
+  

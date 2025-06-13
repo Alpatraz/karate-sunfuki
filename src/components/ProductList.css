@@ -1,0 +1,138 @@
+.product-page {
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem;
+}
+
+/* Filtres en haut, côte à côte sur desktop */
+.filters-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.filters-top select {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  min-width: 220px;
+}
+
+/* Légende explicative */
+.legend {
+  text-align: center;
+  font-style: italic;
+  margin-bottom: 1.5rem;
+  color: #555;
+}
+
+/* Grille produits */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Carte produit */
+.card {
+  position: relative;
+  background: white;
+  border-radius: 10px;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.card img {
+  max-width: 120px;
+  max-height: 120px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.card h2 {
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}
+
+.price {
+  font-weight: bold;
+  color: #cc3333;
+}
+
+.belt {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+/* Badge ceinture */
+.badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  font-size: 0.7rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 999px;
+  font-weight: bold;
+  color: white;
+  z-index: 1;
+}
+
+/* Badge promotion */
+.promo-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background-color: #e53935;
+  color: white;
+  font-weight: bold;
+  font-size: 0.75rem;
+  padding: 4px 8px;
+  border-radius: 4px;
+  z-index: 1;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Couleurs ceinture */
+.badge-yellow { background-color: #fdd835; color: #000; }
+.badge-orange { background-color: #fb8c00; }
+.badge-purple { background-color: #9c27b0; }
+.badge-green  { background-color: #43a047; }
+.badge-blue   { background-color: #1e88e5; }
+.badge-brown  { background-color: #8d6e63; }
+.badge-black  { background-color: #212121; }
+.badge-white  { background-color: #e0e0e0; color: #000; }
+
+/* Responsive pour mobile */
+@media (max-width: 600px) {
+  .filters-top {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .filters-top select {
+    width: 90%;
+  }
+}
+
+.promo-price {
+  color: #d32f2f; /* rouge vif */
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: #888;
+  font-size: 0.95e
+}

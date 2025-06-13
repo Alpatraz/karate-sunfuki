@@ -1,0 +1,49 @@
+.admin-commandes {
+  padding: 2rem;
+}
+
+.commandes-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  align-items: center;
+}
+
+.commandes-actions input {
+  flex: 1 1 300px;
+  padding: 0.5rem;
+}
+
+.csv-btn {
+  background: #1565c0;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.commandes-table-wrapper {
+  overflow-x: auto;
+}
+
+.commandes-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.commandes-table th,
+.commandes-table td {
+  padding: 0.5rem;
+  border-bottom: 1px solid #ccc;
+  text-align: left;
+}
+
+.commande-link {
+  background: none;
+  border: none;
+  color: #1565c0;
+  cursor: pointer;
+  text-decoration: underline;
+}
