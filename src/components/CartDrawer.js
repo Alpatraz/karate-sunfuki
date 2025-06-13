@@ -13,7 +13,7 @@ const CartDrawer = ({ isOpen, onClose }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [sending, setSending] = useState(false);
+  // suppression de sending
   const paypalRef = useRef(null);
 
   const promoCart = cart.map(item => applyPromotion(item, promotions));
@@ -46,7 +46,7 @@ const CartDrawer = ({ isOpen, onClose }) => {
 
   const handlePaymentSuccess = async () => {
     try {
-      setSending(true);
+      // suppression de setSending(true)
       await addDoc(collection(db, "orders"), orderData);
       alert("Commande payée et enregistrée ! Un courriel vous sera envoyé.");
       clearCart();
@@ -58,7 +58,7 @@ const CartDrawer = ({ isOpen, onClose }) => {
       console.error("Erreur lors de l'enregistrement de la commande", error);
       alert("Une erreur est survenue. Veuillez réessayer plus tard.");
     } finally {
-      setSending(false);
+      // suppression de setSending(false)
     }
   };
 
@@ -91,7 +91,7 @@ const CartDrawer = ({ isOpen, onClose }) => {
         },
       }).render(paypalRef.current);
     }
-  }, [isOpen, isFormValid, total]);
+  }, [isOpen, isFormValid, total, handlePaymentSuccess]); // Ajout de handlePaymentSuccess ici
 
   return (
     <div className={`cart-drawer ${isOpen ? "open" : ""}`}>

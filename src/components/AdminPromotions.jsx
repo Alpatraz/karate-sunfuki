@@ -93,7 +93,7 @@ const AdminPromotions = () => {
 
             const isActive = startDate <= nowDate && endDate > nowDate;
             const isUpcoming = startDate > nowDate;
-            const isExpired = endDate <= nowDate;
+            // isExpired supprimé
 
             return (
               <div
